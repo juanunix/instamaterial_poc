@@ -1,0 +1,342 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": ""
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false // root node is included
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.example.instamaterial.data.locator.DataServiceLocator"
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1322970774 { 
+   	label=example
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1627437186 { 
+   	label=instamaterial
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   AuthenticatedUserDataRepository950857610[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)AuthenticatedUserDataRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   loggedUserDataSource: LoggedUserDataSource [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Comment273831292[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Comment</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   content: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   photoId: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userId: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ Builder(): Builder</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+CommentDataRepository1016930206[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)CommentDataRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   commentDataSource: CommentDataSource [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getComments(photoId: String): ObservableTask&lt;List&lt;Comment&gt;&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ publishComment(unpublishedComment: UnpublishedComment): ObservableTask&lt;Comment&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DataServiceLocator1384591793[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DataServiceLocator</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   authenticatedUserRepository: AuthenticatedUserRepository [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   commentDataSource: CommentDataSource [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   commentRepository: CommentRepository [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   likeDataSource: LikeDataSource [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   likeRepository: LikeRepository [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   loggedUserDataSource: LoggedUserDataSource [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   photoDataSource: PhotoDataSource [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   photoRepository: PhotoRepository [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userDataSource: UserDataSource [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userRepository: UserRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- commentDataSource(): CommentDataSource</TD></TR>
+<TR><TD ALIGN="LEFT" >+ commentRepository(): CommentRepository</TD></TR>
+<TR><TD ALIGN="LEFT" >- likeDataSource(): LikeDataSource</TD></TR>
+<TR><TD ALIGN="LEFT" >+ likeRepository(): LikeRepository</TD></TR>
+<TR><TD ALIGN="LEFT" >- loggedUserDataSource(): LoggedUserDataSource</TD></TR>
+<TR><TD ALIGN="LEFT" >+ loggedUserRepository(): AuthenticatedUserRepository</TD></TR>
+<TR><TD ALIGN="LEFT" >- photoDataSource(): PhotoDataSource</TD></TR>
+<TR><TD ALIGN="LEFT" >+ photoRepository(): PhotoRepository</TD></TR>
+<TR><TD ALIGN="LEFT" >- userDataSource(): UserDataSource</TD></TR>
+<TR><TD ALIGN="LEFT" >+ userRepository(): UserRepository</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FakeCommentDataSource1016930206[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FakeCommentDataSource</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   mapPhotoComments: Map&lt;String, List&lt;Comment&gt;&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getComments(photoId: String): ObservableTask&lt;List&lt;Comment&gt;&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ publishComment(unpublishedComment: UnpublishedComment): ObservableTask&lt;Comment&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FakeLikeDataSource1660177292[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FakeLikeDataSource</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   mapPhotoLikes: Map&lt;String, List&lt;Like&gt;&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getLikes(photoId: String): ObservableTask&lt;List&lt;Like&gt;&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ toggleLike(like: Like): ObservableTask&lt;Boolean&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FakeLoggedUserDataSource950857610[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FakeLoggedUserDataSource</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   FAKE_USER_ID: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FakePhotoDataSource77780213[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FakePhotoDataSource</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   photos: List&lt;Photo&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- createPhoto(id: String, userId: String, timestamp: long, sourceUrl: String, description: String): Photo</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getPhoto(photoId: String): ObservableTask&lt;Photo&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ publishPhoto(unpublishedPhoto: UnpublishedPhoto): ObservableTask&lt;Photo&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ uploadPhoto(photoUri: String): ObservableTask&lt;String&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FakeUserDataSource1659899736[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FakeUserDataSource</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ get(userId: String): ObservableTask&lt;User&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ put(user: User): ObservableTask&lt;Boolean&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Like273831292[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Like</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   photoId: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userId: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ Builder(): Builder</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+LikeDataRepository1660177292[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)LikeDataRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   likeDataSource: LikeDataSource [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getLikes(photoId: String): ObservableTask&lt;List&lt;Like&gt;&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ toggleLike(like: Like): ObservableTask&lt;Boolean&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Photo273831292[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Photo</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   description: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   sourceUrl: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   userId: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ Builder(): Builder</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PhotoDataRepository77780213[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PhotoDataRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   photoDataSource: PhotoDataSource [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getPhoto(photoId: String): ObservableTask&lt;Photo&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ publishPhoto(unpublishedPhoto: UnpublishedPhoto): ObservableTask&lt;Photo&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ uploadPhoto(photoUri: String): ObservableTask&lt;String&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UserDataRepository1659899736[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserDataRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   userDataSource: UserDataSource [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getUser(userId: String): ObservableTask&lt;User&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ putUser(user: User): ObservableTask&lt;Boolean&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+DataServiceLocator1384591793 -> AuthenticatedUserDataRepository950857610[arrowhead=none, arrowtail=empty, dir=both];
+DataServiceLocator1384591793 -> CommentDataRepository1016930206[arrowhead=none, arrowtail=empty, dir=both];
+DataServiceLocator1384591793 -> FakeCommentDataSource1016930206[arrowhead=none, arrowtail=empty, dir=both];
+DataServiceLocator1384591793 -> FakeLikeDataSource1660177292[arrowhead=none, arrowtail=empty, dir=both];
+DataServiceLocator1384591793 -> FakeLoggedUserDataSource950857610[arrowhead=none, arrowtail=empty, dir=both];
+DataServiceLocator1384591793 -> FakePhotoDataSource77780213[arrowhead=none, arrowtail=empty, dir=both];
+DataServiceLocator1384591793 -> FakeUserDataSource1659899736[arrowhead=none, arrowtail=empty, dir=both];
+DataServiceLocator1384591793 -> LikeDataRepository1660177292[arrowhead=none, arrowtail=empty, dir=both];
+DataServiceLocator1384591793 -> PhotoDataRepository77780213[arrowhead=none, arrowtail=empty, dir=both];
+DataServiceLocator1384591793 -> UserDataRepository1659899736[arrowhead=none, arrowtail=empty, dir=both];
+FakeCommentDataSource1016930206 -> Comment273831292[label="mapPhotoComments
+[0..*]"];
+FakeLikeDataSource1660177292 -> Like273831292[label="mapPhotoLikes
+[0..*]"];
+FakePhotoDataSource77780213 -> Photo273831292[label="photos
+[0..*]"];
+    
+}
+@enduml

@@ -1,0 +1,167 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": ""
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false // root node is included
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.example.instamaterial.ui.locator.AppServiceLocator"
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1322970774 { 
+   	label=example
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1627437186 { 
+   	label=instamaterial
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   AppServiceLocator1895678343[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)AppServiceLocator</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   postExecutor: PostExecutor [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   threadExecutor: ThreadExecutor [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   useCaseExecutor: UseCaseExecutor [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ plusActivityServiceLocator(): ActivityServiceLocator</TD></TR>
+<TR><TD ALIGN="LEFT" >+ postExecutor(): PostExecutor</TD></TR>
+<TR><TD ALIGN="LEFT" >+ threadExecutor(): ThreadExecutor</TD></TR>
+<TR><TD ALIGN="LEFT" >+ useCaseExecutor(): UseCaseExecutor</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+JobExecutor1505481552[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)JobExecutor</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   threadPoolExecutor: ThreadPoolExecutor [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ execute(command: Runnable)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UIExecutor1505481552[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UIExecutor</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   handler: Handler [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ execute(command: Runnable)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UseCaseExecutor67692128[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UseCaseExecutor</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   postExecutor: PostExecutor [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   threadExecutor: ThreadExecutor [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- createUseCaseResult(callback: UseCaseCallback&lt;R&gt;): Subscriber&lt;R&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ execute(task: ObservableTask&lt;R&gt;, callback: UseCaseCallback&lt;R&gt;)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+AppServiceLocator1895678343 -> UseCaseExecutor67692128[label="useCaseExecutor
+[0..1]"];
+UseCaseExecutor67692128 -> JobExecutor1505481552[arrowhead=none, arrowtail=empty, dir=both];
+UseCaseExecutor67692128 -> UIExecutor1505481552[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml

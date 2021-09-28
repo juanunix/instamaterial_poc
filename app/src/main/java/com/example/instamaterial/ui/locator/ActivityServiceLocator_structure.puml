@@ -1,0 +1,741 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": ""
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false // root node is included
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.example.instamaterial.ui.locator.ActivityServiceLocator"
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1322970774 { 
+   	label=example
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1627437186 { 
+   	label=instamaterial
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   ActivityServiceLocator1895678343[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ActivityServiceLocator</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   commentsPresenter: CommentsPresenter [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getAuthenticatedUserUid: GetAuthenticatedUserUid [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getCommentItem: GetCommentItem [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getCommentItems: GetCommentItems [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getFeedItem: GetFeedItem [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getFeedItems: GetFeedItems [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getPhoto: GetPhoto [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getPhotoComments: GetPhotoComments [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getPhotoLikes: GetPhotoLikes [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getPhotos: GetPhotos [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getUser: GetUser [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   likePhoto: LikePhoto [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mainPresenter: MainPresenter [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   publishComment: PublishComment [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   publishPhoto: PublishPhoto [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   publishPresenter: PublishPresenter [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   updateUser: UpdateUser [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   uploadPhoto: UploadPhoto [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ commentsPresenter(): CommentsPresenter</TD></TR>
+<TR><TD ALIGN="LEFT" >+ likePhoto(): LikePhoto</TD></TR>
+<TR><TD ALIGN="LEFT" >+ mainPresenter(activity: FragmentActivity): MainPresenter</TD></TR>
+<TR><TD ALIGN="LEFT" >+ publishComment(): PublishComment</TD></TR>
+<TR><TD ALIGN="LEFT" >+ publishPhoto(): PublishPhoto</TD></TR>
+<TR><TD ALIGN="LEFT" >+ publishPresenter(): PublishPresenter</TD></TR>
+<TR><TD ALIGN="LEFT" >+ updateUser(): UpdateUser</TD></TR>
+<TR><TD ALIGN="LEFT" >+ uploadPhoto(): UploadPhoto</TD></TR>
+<TR><TD ALIGN="LEFT" >- useCaseExecutor(): UseCaseExecutor</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+AuthenticatedUserDataRepository950857610[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)AuthenticatedUserDataRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   loggedUserDataSource: LoggedUserDataSource [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+CommentDataRepository1016930206[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)CommentDataRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   commentDataSource: CommentDataSource [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getComments(photoId: String): ObservableTask&lt;List&lt;Comment&gt;&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ publishComment(unpublishedComment: UnpublishedComment): ObservableTask&lt;Comment&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+CommentsPresenter1006469098[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)CommentsPresenter</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   currentUserUid: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getAuthenticatedUserUid: GetAuthenticatedUserUid [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getCommentItem: GetCommentItem [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getCommentItems: GetCommentItems [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   publishComment: PublishComment [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ attach(view: View)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ requestCommentItem(comment: Comment)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ requestComments(photoId: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ requestPublishComment(photoId: String, content: String)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FakeCommentDataSource1016930206[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FakeCommentDataSource</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   mapPhotoComments: Map&lt;String, List&lt;Comment&gt;&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getComments(photoId: String): ObservableTask&lt;List&lt;Comment&gt;&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ publishComment(unpublishedComment: UnpublishedComment): ObservableTask&lt;Comment&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FakeLikeDataSource1660177292[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FakeLikeDataSource</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   mapPhotoLikes: Map&lt;String, List&lt;Like&gt;&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getLikes(photoId: String): ObservableTask&lt;List&lt;Like&gt;&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ toggleLike(like: Like): ObservableTask&lt;Boolean&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FakeLoggedUserDataSource950857610[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FakeLoggedUserDataSource</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   FAKE_USER_ID: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FakePhotoDataSource77780213[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FakePhotoDataSource</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   photos: List&lt;Photo&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- createPhoto(id: String, userId: String, timestamp: long, sourceUrl: String, description: String): Photo</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getPhoto(photoId: String): ObservableTask&lt;Photo&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ publishPhoto(unpublishedPhoto: UnpublishedPhoto): ObservableTask&lt;Photo&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ uploadPhoto(photoUri: String): ObservableTask&lt;String&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FakeUserDataSource1659899736[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FakeUserDataSource</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ get(userId: String): ObservableTask&lt;User&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ put(user: User): ObservableTask&lt;Boolean&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+GetAuthenticatedUserUid16971021[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)GetAuthenticatedUserUid</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   authenticatedUserRepository: AuthenticatedUserRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createObservableTask(input: Void): ObservableTask&lt;String&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+GetCommentItem938064761[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)GetCommentItem</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   getUser: GetUser [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createObservableTask(comment: Comment): ObservableTask&lt;CommentItem&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+GetCommentItems938064761[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)GetCommentItems</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   getCommentItem: GetCommentItem [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getPhotoComments: GetPhotoComments [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createObservableTask(photoId: String): ObservableTask&lt;List&lt;CommentItem&gt;&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+GetFeedItem938064761[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)GetFeedItem</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   getPhoto: GetPhoto [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getPhotoLikes: GetPhotoLikes [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getUser: GetUser [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createObservableTask(photoId: String): ObservableTask&lt;FeedItem&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >- getPhotoLikes(photoId: String): List&lt;String&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+GetFeedItems938064761[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)GetFeedItems</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   getFeedItem: GetFeedItem [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getPhotos: GetPhotos [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createObservableTask(input: String): ObservableTask&lt;List&lt;FeedItem&gt;&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+GetPhoto16971021[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)GetPhoto</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   photoRepository: PhotoRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createObservableTask(photoId: String): ObservableTask&lt;Photo&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+GetPhotoComments16971021[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)GetPhotoComments</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   commentRepository: CommentRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createObservableTask(photoId: String): ObservableTask&lt;List&lt;Comment&gt;&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+GetPhotoLikes16971021[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)GetPhotoLikes</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   likeRepository: LikeRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createObservableTask(photoId: String): ObservableTask&lt;List&lt;Like&gt;&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+GetPhotos16971021[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)GetPhotos</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   photoRepository: PhotoRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createObservableTask(input: Void): ObservableTask&lt;List&lt;Photo&gt;&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+GetUser16971021[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)GetUser</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   userRepository: UserRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createObservableTask(userId: String): ObservableTask&lt;User&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+JobExecutor1505481552[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)JobExecutor</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   threadPoolExecutor: ThreadPoolExecutor [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ execute(command: Runnable)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+LikeDataRepository1660177292[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)LikeDataRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   likeDataSource: LikeDataSource [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getLikes(photoId: String): ObservableTask&lt;List&lt;Like&gt;&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ toggleLike(like: Like): ObservableTask&lt;Boolean&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+LikePhoto16971021[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)LikePhoto</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   likeRepository: LikeRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createObservableTask(like: Like): ObservableTask&lt;Boolean&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+MainPresenter1719142619[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MainPresenter</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   currentUserUid: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getAuthenticatedUserUid: GetAuthenticatedUserUid [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getFeedItem: GetFeedItem [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getFeedItems: GetFeedItems [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   likePhoto: LikePhoto [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ attach(view: View)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onRequestLike(photoId: String, likeSource: int)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ requestFeedItem(photoId: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ requestFeedItems()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ requestLoggedUser()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ requestSignOut()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PhotoDataRepository77780213[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PhotoDataRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   photoDataSource: PhotoDataSource [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getPhoto(photoId: String): ObservableTask&lt;Photo&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ publishPhoto(unpublishedPhoto: UnpublishedPhoto): ObservableTask&lt;Photo&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ uploadPhoto(photoUri: String): ObservableTask&lt;String&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Presenter405686325[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Presenter&lt;T extends Presenter.View&gt;</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   view: T [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ attach(view: T)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PublishComment16971021[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PublishComment</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   commentRepository: CommentRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createObservableTask(unpublishedComment: UnpublishedComment): ObservableTask&lt;Comment&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PublishPhoto16971021[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PublishPhoto</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   photoRepository: PhotoRepository [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   uploadPhoto: UploadPhoto [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createObservableTask(unpublishedPhoto: UnpublishedPhoto): ObservableTask&lt;Photo&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PublishPresenter721432237[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PublishPresenter</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   currentUserUid: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   getAuthenticatedUserUid: GetAuthenticatedUserUid [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   publishPhoto: PublishPhoto [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ attach(view: View)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onRequestPublish(photoUri: String, photoDescription: String)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UIExecutor1505481552[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UIExecutor</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   handler: Handler [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ execute(command: Runnable)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UpdateUser16971021[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UpdateUser</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   userRepository: UserRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createObservableTask(user: User): ObservableTask&lt;Boolean&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UploadPhoto16971021[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UploadPhoto</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   photoRepository: PhotoRepository [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createObservableTask(localPhotoUri: String): ObservableTask&lt;String&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UseCase387180040[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UseCase&lt;I, R&gt;</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   useCaseExecutor: UseCaseExecutor [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createObservableTask(input: I): ObservableTask&lt;R&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ execute(callback: UseCaseCallback&lt;R&gt;)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ execute(input: I, callback: UseCaseCallback&lt;R&gt;)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UseCaseExecutor67692128[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UseCaseExecutor</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   postExecutor: PostExecutor [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   threadExecutor: ThreadExecutor [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- createUseCaseResult(callback: UseCaseCallback&lt;R&gt;): Subscriber&lt;R&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ execute(task: ObservableTask&lt;R&gt;, callback: UseCaseCallback&lt;R&gt;)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UserDataRepository1659899736[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UserDataRepository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   userDataSource: UserDataSource [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getUser(userId: String): ObservableTask&lt;User&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ putUser(user: User): ObservableTask&lt;Boolean&gt;</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+ActivityServiceLocator1895678343 -> CommentsPresenter1006469098[label="commentsPresenter
+[0..1]"];
+ActivityServiceLocator1895678343 -> GetAuthenticatedUserUid16971021[label="getAuthenticatedUserUid
+[0..1]"];
+ActivityServiceLocator1895678343 -> GetCommentItem938064761[label="getCommentItem
+[0..1]"];
+ActivityServiceLocator1895678343 -> GetCommentItems938064761[label="getCommentItems
+[0..1]"];
+ActivityServiceLocator1895678343 -> GetFeedItem938064761[label="getFeedItem
+[0..1]"];
+ActivityServiceLocator1895678343 -> GetFeedItems938064761[label="getFeedItems
+[0..1]"];
+ActivityServiceLocator1895678343 -> GetPhoto16971021[label="getPhoto
+[0..1]"];
+ActivityServiceLocator1895678343 -> GetPhotoComments16971021[label="getPhotoComments
+[0..1]"];
+ActivityServiceLocator1895678343 -> GetPhotoLikes16971021[label="getPhotoLikes
+[0..1]"];
+ActivityServiceLocator1895678343 -> GetPhotos16971021[label="getPhotos
+[0..1]"];
+ActivityServiceLocator1895678343 -> GetUser16971021[label="getUser
+[0..1]"];
+ActivityServiceLocator1895678343 -> LikePhoto16971021[label="likePhoto
+[0..1]"];
+ActivityServiceLocator1895678343 -> MainPresenter1719142619[label="mainPresenter
+[0..1]"];
+ActivityServiceLocator1895678343 -> PublishComment16971021[label="publishComment
+[0..1]"];
+ActivityServiceLocator1895678343 -> PublishPhoto16971021[label="publishPhoto
+[0..1]"];
+ActivityServiceLocator1895678343 -> PublishPresenter721432237[label="publishPresenter
+[0..1]"];
+ActivityServiceLocator1895678343 -> UpdateUser16971021[label="updateUser
+[0..1]"];
+ActivityServiceLocator1895678343 -> UploadPhoto16971021[label="uploadPhoto
+[0..1]"];
+AuthenticatedUserDataRepository950857610 -> FakeLoggedUserDataSource950857610[arrowhead=none, arrowtail=empty, dir=both];
+CommentDataRepository1016930206 -> FakeCommentDataSource1016930206[arrowhead=none, arrowtail=empty, dir=both];
+CommentsPresenter1006469098 -> GetAuthenticatedUserUid16971021[label="getAuthenticatedUserUid
+[0..1]"];
+CommentsPresenter1006469098 -> GetCommentItem938064761[label="getCommentItem
+[0..1]"];
+CommentsPresenter1006469098 -> GetCommentItems938064761[label="getCommentItems
+[0..1]"];
+CommentsPresenter1006469098 -> PublishComment16971021[label="publishComment
+[0..1]"];
+GetAuthenticatedUserUid16971021 -> AuthenticatedUserDataRepository950857610[arrowhead=none, arrowtail=empty, dir=both];
+GetCommentItem938064761 -> GetUser16971021[label="getUser
+[0..1]"];
+GetCommentItems938064761 -> GetCommentItem938064761[label="getCommentItem
+[0..1]"];
+GetCommentItems938064761 -> GetPhotoComments16971021[label="getPhotoComments
+[0..1]"];
+GetFeedItem938064761 -> GetPhoto16971021[label="getPhoto
+[0..1]"];
+GetFeedItem938064761 -> GetPhotoLikes16971021[label="getPhotoLikes
+[0..1]"];
+GetFeedItem938064761 -> GetUser16971021[label="getUser
+[0..1]"];
+GetFeedItems938064761 -> GetFeedItem938064761[label="getFeedItem
+[0..1]"];
+GetFeedItems938064761 -> GetPhotos16971021[label="getPhotos
+[0..1]"];
+GetPhotoLikes16971021 -> LikeDataRepository1660177292[arrowhead=none, arrowtail=empty, dir=both];
+LikeDataRepository1660177292 -> FakeLikeDataSource1660177292[arrowhead=none, arrowtail=empty, dir=both];
+MainPresenter1719142619 -> GetAuthenticatedUserUid16971021[label="getAuthenticatedUserUid
+[0..1]"];
+MainPresenter1719142619 -> GetFeedItem938064761[label="getFeedItem
+[0..1]"];
+MainPresenter1719142619 -> GetFeedItems938064761[label="getFeedItems
+[0..1]"];
+MainPresenter1719142619 -> LikePhoto16971021[label="likePhoto
+[0..1]"];
+PhotoDataRepository77780213 -> FakePhotoDataSource77780213[arrowhead=none, arrowtail=empty, dir=both];
+Presenter405686325 -> CommentsPresenter1006469098[arrowhead=none, arrowtail=empty, dir=both];
+Presenter405686325 -> MainPresenter1719142619[arrowhead=none, arrowtail=empty, dir=both];
+Presenter405686325 -> PublishPresenter721432237[arrowhead=none, arrowtail=empty, dir=both];
+PublishComment16971021 -> CommentDataRepository1016930206[arrowhead=none, arrowtail=empty, dir=both];
+PublishPhoto16971021 -> PhotoDataRepository77780213[arrowhead=none, arrowtail=empty, dir=both];
+PublishPhoto16971021 -> UploadPhoto16971021[label="uploadPhoto
+[0..1]"];
+PublishPresenter721432237 -> GetAuthenticatedUserUid16971021[label="getAuthenticatedUserUid
+[0..1]"];
+PublishPresenter721432237 -> PublishPhoto16971021[label="publishPhoto
+[0..1]"];
+UpdateUser16971021 -> UserDataRepository1659899736[arrowhead=none, arrowtail=empty, dir=both];
+UseCase387180040 -> GetAuthenticatedUserUid16971021[arrowhead=none, arrowtail=empty, dir=both];
+UseCase387180040 -> GetCommentItem938064761[arrowhead=none, arrowtail=empty, dir=both];
+UseCase387180040 -> GetCommentItems938064761[arrowhead=none, arrowtail=empty, dir=both];
+UseCase387180040 -> GetFeedItem938064761[arrowhead=none, arrowtail=empty, dir=both];
+UseCase387180040 -> GetFeedItems938064761[arrowhead=none, arrowtail=empty, dir=both];
+UseCase387180040 -> GetPhoto16971021[arrowhead=none, arrowtail=empty, dir=both];
+UseCase387180040 -> GetPhotoComments16971021[arrowhead=none, arrowtail=empty, dir=both];
+UseCase387180040 -> GetPhotoLikes16971021[arrowhead=none, arrowtail=empty, dir=both];
+UseCase387180040 -> GetPhotos16971021[arrowhead=none, arrowtail=empty, dir=both];
+UseCase387180040 -> GetUser16971021[arrowhead=none, arrowtail=empty, dir=both];
+UseCase387180040 -> LikePhoto16971021[arrowhead=none, arrowtail=empty, dir=both];
+UseCase387180040 -> PublishComment16971021[arrowhead=none, arrowtail=empty, dir=both];
+UseCase387180040 -> PublishPhoto16971021[arrowhead=none, arrowtail=empty, dir=both];
+UseCase387180040 -> UpdateUser16971021[arrowhead=none, arrowtail=empty, dir=both];
+UseCase387180040 -> UploadPhoto16971021[arrowhead=none, arrowtail=empty, dir=both];
+UseCase387180040 -> UseCaseExecutor67692128[label="useCaseExecutor
+[0..1]"];
+UseCaseExecutor67692128 -> JobExecutor1505481552[arrowhead=none, arrowtail=empty, dir=both];
+UseCaseExecutor67692128 -> UIExecutor1505481552[arrowhead=none, arrowtail=empty, dir=both];
+UserDataRepository1659899736 -> FakeUserDataSource1659899736[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml

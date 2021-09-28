@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.PocInstamaterial" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/style_color_primary</item>
+        <item name="colorPrimaryVariant">@color/style_color_primary_dark</item>
+        <item name="colorOnPrimary">@color/bg_comments</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/style_color_primary_dark</item>
+        <item name="colorSecondaryVariant">@color/style_color_accent</item>
+        <item name="colorOnSecondary">@color/fab_color_shadow</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ContextMenuButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/btn_context_menu</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+</resources>
